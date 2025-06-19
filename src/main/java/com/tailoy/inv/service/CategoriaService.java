@@ -27,6 +27,15 @@ public class CategoriaService {
         return dtos;
     }
 
+    public CategoriaDTO getCategoriasById(int id) {
+        Categoria categoria = categoriaRepository.findById(id).orElse(null);
+
+        if (categoria == null)
+            return null;
+
+        return convertirADTO(categoria);
+    }
+
     public Categoria saveCategoria(Categoria categoria) {
         return categoriaRepository.save(categoria);
     }

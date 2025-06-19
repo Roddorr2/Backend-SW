@@ -28,6 +28,15 @@ public class OrdenCompraService {
         return dtos;
     }
 
+    public OrdenCompraDTO getOrdenesById(int id) {
+        OrdenCompra ordenCompra = ordenCompraRepository.findById(id).orElse(null);
+
+        if (ordenCompra == null)
+            return null;
+
+        return convertirADTO(ordenCompra);
+    }
+
     public OrdenCompra saveOrdenCompra(OrdenCompra oc) {
         return ordenCompraRepository.save(oc);
     }

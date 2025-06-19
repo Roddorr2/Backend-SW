@@ -1,7 +1,9 @@
 package com.tailoy.inv.service;
 
+import com.tailoy.inv.dto.CategoriaDTO;
 import com.tailoy.inv.dto.DespachoSucursalDTO;
 import com.tailoy.inv.dto.SucursalDTO;
+import com.tailoy.inv.model.Categoria;
 import com.tailoy.inv.model.DespachoSucursal;
 import com.tailoy.inv.repository.DespachoSucursalRepository;
 import org.springframework.stereotype.Service;
@@ -26,6 +28,15 @@ public class DespachoSucursalService {
             dtos.add(dto);
         }
         return dtos;
+    }
+
+    public DespachoSucursalDTO getDespachosById(int id) {
+        DespachoSucursal despachoSucursal = despachoSucursalRepository.findById(id).orElse(null);
+
+        if (despachoSucursal == null)
+            return null;
+
+        return convertirADTO(despachoSucursal);
     }
 
     public DespachoSucursal saveDespacho(DespachoSucursal ds) {
