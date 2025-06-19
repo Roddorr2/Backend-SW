@@ -1,10 +1,21 @@
 package com.tailoy.inv.dto;
 
+import com.tailoy.inv.model.MovimientoAlmacenDetalle;
+
 public class MovimientoAlmacenDetalleDTO {
     private int id;
-    private int cantidad;
     private MovimientoAlmacenDTO movimientoAlmacen;
     private ProductoDTO producto;
+
+    public MovimientoAlmacenDetalleDTO() {
+
+    }
+
+    public MovimientoAlmacenDetalleDTO(MovimientoAlmacenDetalle movimientoDetalle) {
+        this.id = movimientoDetalle.getId();
+        this.movimientoAlmacen = new MovimientoAlmacenDTO(movimientoDetalle.getMovimientoAlmacen());
+        this.producto = new ProductoDTO(movimientoDetalle.getProducto());
+    }
 
     public int getId() {
         return id;
@@ -12,14 +23,6 @@ public class MovimientoAlmacenDetalleDTO {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
     }
 
     public MovimientoAlmacenDTO getMovimientoAlmacen() {

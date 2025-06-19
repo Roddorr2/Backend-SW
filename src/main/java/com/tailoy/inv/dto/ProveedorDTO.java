@@ -8,6 +8,10 @@ public class ProveedorDTO {
     private String ruc;
     private String telefono;
     private String direccion;
+
+    public ProveedorDTO() {
+
+    }
     
     public ProveedorDTO(Proveedor proveedor) {
     	this.id = proveedor.getId();

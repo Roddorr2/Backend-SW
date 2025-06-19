@@ -1,5 +1,7 @@
 package com.tailoy.inv.dto;
 
+import com.tailoy.inv.model.MovimientoInventario;
+
 import java.time.LocalDateTime;
 
 public class MovimientoInventarioDTO {
@@ -10,6 +12,20 @@ public class MovimientoInventarioDTO {
     private LocalDateTime fecha;
     private ProductoDTO producto;
     private UsuarioDTO usuario;
+
+    public MovimientoInventarioDTO() {
+
+    }
+
+    public MovimientoInventarioDTO(MovimientoInventario movimientoInventario) {
+        this.id = movimientoInventario.getId();
+        this.cantidad = movimientoInventario.getCantidad();
+        this.nombre = movimientoInventario.getNombre();
+        this.tipoMovimiento = movimientoInventario.getTipoMovimiento();
+        this.fecha = movimientoInventario.getFecha();
+        this.producto = new ProductoDTO(movimientoInventario.getProducto());
+        this.usuario = new UsuarioDTO(movimientoInventario.getUsuario());
+    }
 
     public int getId() {
         return id;

@@ -6,6 +6,10 @@ public class SubcategoriaDTO {
     private int id;
     private String nombre;
     private CategoriaDTO categoria;
+
+    public SubcategoriaDTO() {
+
+    }
     
     public SubcategoriaDTO (Subcategoria subcategoria) {
     	this.id = subcategoria.getId();
