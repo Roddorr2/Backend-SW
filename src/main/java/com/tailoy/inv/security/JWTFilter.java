@@ -1,6 +1,5 @@
 package com.tailoy.inv.security;
 
-import com.tailoy.inv.repository.UsuarioRepository;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -12,11 +11,9 @@ import java.io.IOException;
 @Component
 public class JWTFilter extends GenericFilter {
     private final JWTUtil jwtUtil;
-    private final UsuarioRepository usuarioRepository;
 
-    public JWTFilter(JWTUtil jwtUtil, UsuarioRepository usuarioRepository) {
+    public JWTFilter(JWTUtil jwtUtil) {
         this.jwtUtil = jwtUtil;
-        this.usuarioRepository = usuarioRepository;
     }
 
     @Override

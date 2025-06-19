@@ -1,7 +1,5 @@
 package com.tailoy.inv.security;
 
-import com.tailoy.inv.model.Cargo;
-import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

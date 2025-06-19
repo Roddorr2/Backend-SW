@@ -1,5 +1,6 @@
 package com.tailoy.inv.dto;
 
+import com.tailoy.inv.model.OrdenCompraDetalle;
 
 public class OrdenCompraDetalleDTO {
     private int id;
@@ -8,6 +9,19 @@ public class OrdenCompraDetalleDTO {
     private int cantidad;
     private double precioUnitario;
     private String observaciones;
+    
+    public OrdenCompraDetalleDTO() {
+    	
+    }
+    
+    public OrdenCompraDetalleDTO(OrdenCompraDetalle ordenCompraDetalle) {
+    	this.id = ordenCompraDetalle.getId();
+    	this.ordenCompra = new OrdenCompraDTO(ordenCompraDetalle.getOrdenCompra());
+    	this.producto = new ProductoDTO(ordenCompraDetalle.getProducto());
+    	this.cantidad = ordenCompraDetalle.getCantidad();
+    	this.precioUnitario = ordenCompraDetalle.getPrecioUnitario();
+    	this.observaciones = ordenCompraDetalle.getObservaciones();
+    }
 
     public int getId() {
         return id;

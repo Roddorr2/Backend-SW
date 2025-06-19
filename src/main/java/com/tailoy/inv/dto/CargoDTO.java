@@ -1,7 +1,5 @@
 package com.tailoy.inv.dto;
 
-import com.tailoy.inv.model.Cargo;
-
 public class CargoDTO {
     private int id;
     private String nombre;
