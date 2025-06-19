@@ -26,6 +26,15 @@ public class CargoService {
         }
         return dtos;
     }
+    
+    public CargoDTO getCargosById(int id) {
+    	Cargo cargo = cargoRepository.findById(id).orElse(null);
+    	
+    	if (cargo == null)
+    		return null;
+    	
+    	return convertirADTO(cargo);
+    }
 
     public Cargo saveCargo(Cargo cargo) {
         return cargoRepository.save(cargo);
