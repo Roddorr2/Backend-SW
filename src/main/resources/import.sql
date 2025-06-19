@@ -47,7 +47,7 @@ insert into orden_compra (proveedor_id, fecha, estado_operacion) values (3, '202
 insert into orden_compra (proveedor_id, fecha, estado_operacion) values (4, '2025-06-07 16:00:00', 0);
 insert into orden_compra (proveedor_id, fecha, estado_operacion) values (5, '2025-06-10 11:45:00', 0);
 
--- Inserciones en orden_compra_producto
+-- Inserciones en orden_compra_detalle
 insert into orden_compra_detalle (orden_compra_id, producto_id, cantidad, precio_unitario, observaciones) values (1, 1, 50, 1.50, 'Entrega rápida');
 insert into orden_compra_detalle (orden_compra_id, producto_id, cantidad, precio_unitario, observaciones) values (2, 3, 10, 350.00, 'Revisar garantía');
 insert into orden_compra_detalle (orden_compra_id, producto_id, cantidad, precio_unitario, observaciones) values (3, 5, 20, 25.00, 'Entrega parcial');
@@ -68,9 +68,9 @@ insert into despacho_sucursal (estado_operacion, fecha, sucursal_id) values (0, 
 insert into despacho_sucursal (estado_operacion, fecha, sucursal_id) values (1, '2025-06-08 17:50:00', 4);
 insert into despacho_sucursal (estado_operacion, fecha, sucursal_id) values (0, '2025-06-11 10:00:00', 5);
 
--- Inserciones en despacho_sucursal_producto
+-- Inserciones en despacho_sucursal_detalle
 insert into despacho_sucursal_detalle (despacho_sucursal_id, producto_id, cantidad, precio_unitario, observaciones) values (1, 1, 30, 1.50, 'Bien embalado');
-insert into despacho_sucursal_detalle (despacho_sucursal_id, producto_id, cantidad, precio_unitario, observaciones) values (2, 2, 40, 3.20, '');
+insert into despacho_sucursal_detalle (despacho_sucursal_id, producto_id, cantidad, precio_unitario, observaciones) values (2, 2, 40, 3.20, '>');
 insert into despacho_sucursal_detalle (despacho_sucursal_id, producto_id, cantidad, precio_unitario, observaciones) values (3, 3, 5, 350.00, 'Cuidado con pantalla');
 insert into despacho_sucursal_detalle (despacho_sucursal_id, producto_id, cantidad, precio_unitario, observaciones) values (4, 4, 2, 2400.00, 'Manejo con cuidado');
 insert into despacho_sucursal_detalle (despacho_sucursal_id, producto_id, cantidad, precio_unitario, observaciones) values (5, 5, 10, 25.00, 'Sin observación');

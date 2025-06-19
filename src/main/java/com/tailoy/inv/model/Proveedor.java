@@ -13,18 +13,20 @@ public class Proveedor {
     private String direccion;
     @OneToMany(mappedBy = "proveedor", cascade = CascadeType.ALL)
     private Set<OrdenCompra> ordenCompras;
+    private boolean estado;
 
     public Proveedor() {
 
     }
 
-    public Proveedor(int id, String nombre, String ruc, String telefono, String direccion, Set<OrdenCompra> ordenCompras) {
+    public Proveedor(int id, String nombre, String ruc, String telefono, String direccion, Set<OrdenCompra> ordenCompras, boolean estado) {
         this.id = id;
         this.nombre = nombre;
         this.ruc = ruc;
         this.telefono = telefono;
         this.direccion = direccion;
         this.ordenCompras = ordenCompras;
+        this.estado = estado;
     }
 
     public int getId() {
@@ -74,4 +76,12 @@ public class Proveedor {
     public void setOrdenCompras(Set<OrdenCompra> ordenCompras) {
         this.ordenCompras = ordenCompras;
     }
+
+	public boolean isEstado() {
+		return estado;
+	}
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
 }
