@@ -1,5 +1,6 @@
 package com.tailoy.inv.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.Set;
 @Entity
@@ -12,6 +13,7 @@ public class Proveedor {
     private String telefono;
     private String direccion;
     @OneToMany(mappedBy = "proveedor", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<OrdenCompra> ordenCompras;
     private boolean estado;
 

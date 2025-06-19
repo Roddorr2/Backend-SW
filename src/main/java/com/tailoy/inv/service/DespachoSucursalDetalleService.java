@@ -2,8 +2,10 @@ package com.tailoy.inv.service;
 
 import com.tailoy.inv.dto.DespachoSucursalDTO;
 import com.tailoy.inv.dto.DespachoSucursalDetalleDTO;
+import com.tailoy.inv.dto.OrdenCompraDetalleDTO;
 import com.tailoy.inv.dto.ProductoDTO;
 import com.tailoy.inv.model.DespachoSucursalDetalle;
+import com.tailoy.inv.model.OrdenCompraDetalle;
 import com.tailoy.inv.repository.DespachoSucursalDetalleRepository;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +31,16 @@ public class DespachoSucursalDetalleService {
         return dtos;
     }
 
-    public DespachoSucursalDetalle saveDespacho(DespachoSucursalDetalle ds) {
+    public DespachoSucursalDetalleDTO getDespachoDetalleById(int id) {
+        DespachoSucursalDetalle ocd = despachoSucursalDetalleRepository.findById(id).orElse(null);
+
+        if (ocd == null)
+            return null;
+
+        return convertirADTO(ocd);
+    }
+
+    public DespachoSucursalDetalle saveDespachoDetalle(DespachoSucursalDetalle ds) {
         return despachoSucursalDetalleRepository.save(ds);
     }
 

@@ -13,11 +13,11 @@ public class ProductoDTO {
     private String unidadMedida;
     private boolean estado;
     private SubcategoriaDTO subcategoria;
-    
+
     public ProductoDTO() {
     	
     }
-    
+
     public ProductoDTO(Producto producto) {
         this.id = producto.getId();
         this.codigo = producto.getCodigo();
@@ -110,4 +110,5 @@ public class ProductoDTO {
     public void setSubcategoria(SubcategoriaDTO subcategoria) {
         this.subcategoria = subcategoria;
     }
+
 }

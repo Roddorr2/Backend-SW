@@ -3,6 +3,7 @@ package com.tailoy.inv.service;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import org.springframework.stereotype.Service;
 
 import com.tailoy.inv.dto.OrdenCompraDTO;
@@ -28,6 +29,15 @@ public class OrdenCompraDetalleService {
             dtos.add(dto);
         }
         return dtos;
+    }
+
+    public OrdenCompraDetalleDTO getOrdenDetalleById(int id) {
+        OrdenCompraDetalle ordenCompraDetalle = ordenCompralDetalleRepository.findById(id).orElse(null);
+
+        if (ordenCompraDetalle == null)
+            return null;
+
+        return convertirADTO(ordenCompraDetalle);
     }
 
     public OrdenCompraDetalle saveOrden(OrdenCompraDetalle ocd) {

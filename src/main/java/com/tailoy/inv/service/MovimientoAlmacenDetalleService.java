@@ -3,6 +3,7 @@ package com.tailoy.inv.service;
 import com.tailoy.inv.dto.MovimientoAlmacenDTO;
 import com.tailoy.inv.dto.MovimientoAlmacenDetalleDTO;
 import com.tailoy.inv.dto.ProductoDTO;
+import com.tailoy.inv.model.MovimientoAlmacen;
 import com.tailoy.inv.model.MovimientoAlmacenDetalle;
 import com.tailoy.inv.repository.MovimientoAlmacenDetalleRepository;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,15 @@ public class MovimientoAlmacenDetalleService {
             dtos.add(dto);
         }
         return dtos;
+    }
+
+    public MovimientoAlmacenDetalleDTO getMovimientoDetalleById(int id) {
+        MovimientoAlmacenDetalle mad = movimientoAlmacenDetalleRepository.findById(id).orElse(null);
+
+        if (mad == null)
+            return null;
+
+        return convertirADTO(mad);
     }
 
     public MovimientoAlmacenDetalle saveMovimientoDetalle(MovimientoAlmacenDetalle mad) {

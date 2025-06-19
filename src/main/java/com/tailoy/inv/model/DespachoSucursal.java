@@ -1,5 +1,6 @@
 package com.tailoy.inv.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -16,6 +17,7 @@ public class DespachoSucursal {
     @JoinColumn(name = "sucursal_id")
     private Sucursal sucursal;
     @OneToMany(mappedBy = "despachoSucursal", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<DespachoSucursalDetalle> despachoSucursalDetalles;
 
     public DespachoSucursal() {

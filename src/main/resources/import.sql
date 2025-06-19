@@ -90,11 +90,11 @@ insert into movimiento_almacen_detalle (movimiento_almacen_id, producto_id) valu
 insert into movimiento_almacen_detalle (movimiento_almacen_id, producto_id) values (5, 4);
 
 -- Inserciones en historial_accion
-insert into historial_accion (usuario_id, tipo_accion, descripcion, modulo) values (1, 1, 'Creación de producto', 1);
-insert into historial_accion (usuario_id, tipo_accion, descripcion, modulo) values (2, 2, 'Actualización de stock', 2);
-insert into historial_accion (usuario_id, tipo_accion, descripcion, modulo) values (3, 3, 'Eliminación de orden', 3);
-insert into historial_accion (usuario_id, tipo_accion, descripcion, modulo) values (4, 1, 'Creación de proveedor', 4);
-insert into historial_accion (usuario_id, tipo_accion, descripcion, modulo) values (5, 2, 'Modificación de categoría', 5);
+insert into historial_accion (usuario_id, fecha, tipo_accion, descripcion, modulo) values (1, "2023-04-15 10:30:00",1, 'Creación de producto', 1);
+insert into historial_accion (usuario_id, fecha, tipo_accion, descripcion, modulo) values (2, "2024-11-20 23:59:59",2, 'Actualización de stock', 2);
+insert into historial_accion (usuario_id, fecha, tipo_accion, descripcion, modulo) values (3, "2025-01-01 00:00:00",3, 'Eliminación de orden', 3);
+insert into historial_accion (usuario_id, fecha, tipo_accion, descripcion, modulo) values (4, "2022-07-08 14:05:10",1, 'Creación de proveedor', 4);
+insert into historial_accion (usuario_id, fecha, tipo_accion, descripcion, modulo) values (5, "2023-02-28 08:20:30",2, 'Modificación de categoría', 5);
 
 -- Inserciones en movimiento_inventario
 insert into movimiento_inventario (producto_id, cantidad, nombre, tipo_movimiento, usuario_id) values (1, 50, 'Ingreso por compra', 1, 1);

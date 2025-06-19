@@ -1,5 +1,6 @@
 package com.tailoy.inv.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Set;
@@ -21,10 +22,13 @@ public class Producto {
     @JoinColumn(name = "subcategoria_id", referencedColumnName = "id")
     private Subcategoria subcategoria;
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<OrdenCompraDetalle> ordenCompraDetalles;
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<DespachoSucursalDetalle> despachoSucursalDetalles;
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<MovimientoInventario> movimientoInventarios;
 
 

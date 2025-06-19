@@ -1,5 +1,6 @@
 package com.tailoy.inv.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Set;
@@ -16,6 +17,7 @@ public class Usuario {
     @JoinColumn(name = "cargo_id", referencedColumnName = "id")
     private Cargo cargo;
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<HistorialAccion> historialAcciones;
 
     public Usuario() {

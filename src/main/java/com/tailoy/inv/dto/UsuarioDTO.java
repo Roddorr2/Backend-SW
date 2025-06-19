@@ -15,6 +15,7 @@ public class UsuarioDTO {
     public UsuarioDTO(Usuario usuario) {
         this.id = usuario.getId();
         this.nombre = usuario.getNombre();
+        this.correo = usuario.getCorreo();
         this.contrasena = usuario.getContrasena();
         this.cargo = new CargoDTO(usuario.getCargo());
     }

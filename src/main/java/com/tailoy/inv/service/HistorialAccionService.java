@@ -1,14 +1,15 @@
 package com.tailoy.inv.service;
 
 import com.tailoy.inv.dto.HistorialAccionDTO;
+import com.tailoy.inv.dto.HistorialUsuarioDTO;
 import com.tailoy.inv.dto.UsuarioDTO;
-import com.tailoy.inv.model.Cargo;
 import com.tailoy.inv.model.HistorialAccion;
 import com.tailoy.inv.repository.HistorialAccionRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class HistorialAccionService {
@@ -44,6 +45,14 @@ public class HistorialAccionService {
 
     public void deleteHistorial(int id) {
         historialAccionRepository.deleteById(id);
+    }
+
+    public List<HistorialUsuarioDTO> getHistorialConUsuarioJPQL() {
+        return historialAccionRepository.fetchHistorialWithUsuarioJPQL();
+    }
+
+    public List<Map<String, Object>> getHistorialConUsuarioNativo() {
+        return historialAccionRepository.fetchHistorialWithUsuarioNative();
     }
 
     private HistorialAccionDTO convertirADTO(HistorialAccion historialAccion) {

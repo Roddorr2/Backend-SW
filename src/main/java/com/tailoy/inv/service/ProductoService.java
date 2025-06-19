@@ -1,5 +1,6 @@
 package com.tailoy.inv.service;
 
+import com.tailoy.inv.dto.ProdSubCatDTO;
 import com.tailoy.inv.dto.ProductoDTO;
 import com.tailoy.inv.dto.SubcategoriaDTO;
 import com.tailoy.inv.model.Producto;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ProductoService {
@@ -45,6 +47,13 @@ public class ProductoService {
         productoRepository.deleteById(id);
     }
 
+    public List<ProdSubCatDTO> getProductosConSubCatJPQL() {
+        return productoRepository.obtenerProductosConSubcatCatJPQL();
+    }
+
+    public List<Map<String, Object>> getProductosConSubCatSQL() {
+        return productoRepository.obtenerProductosConSubcatCatNative();
+    }
 
     private ProductoDTO convertirADTO(Producto producto) {
         ProductoDTO dto = new ProductoDTO();
@@ -55,6 +64,7 @@ public class ProductoService {
         dto.setMarca(producto.getMarca());
         dto.setStock(producto.getStock());
         dto.setPrecioUnitario(producto.getPrecioUnitario());
+        dto.setUnidadMedida(producto.getUnidadMedida());
         dto.setDescripcion(producto.getDescripcion());
         dto.setSubcategoria(new SubcategoriaDTO(producto.getSubcategoria()));
 

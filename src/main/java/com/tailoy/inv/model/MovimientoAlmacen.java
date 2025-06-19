@@ -1,5 +1,6 @@
 package com.tailoy.inv.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Set;
@@ -11,6 +12,7 @@ public class MovimientoAlmacen {
     private int id;
     private int tipoAlmacen;
     @OneToMany(mappedBy = "movimientoAlmacen", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<MovimientoAlmacenDetalle> movimientoAlmacenDetalles;
     private int cantidad;
 

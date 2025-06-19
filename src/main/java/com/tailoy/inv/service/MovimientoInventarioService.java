@@ -29,6 +29,15 @@ public class MovimientoInventarioService {
         return dtos;
     }
 
+    public MovimientoInventarioDTO getMovimientoInventarioById(int id) {
+        MovimientoInventario movimientoInventario = movimientoInventarioRepository.findById(id).orElse(null);
+
+        if (movimientoInventario == null)
+            return null;
+
+        return convertirADTO(movimientoInventario);
+    }
+
     public MovimientoInventario saveMovimientoInventario(MovimientoInventario mi) {
         return movimientoInventarioRepository.save(mi);
     }

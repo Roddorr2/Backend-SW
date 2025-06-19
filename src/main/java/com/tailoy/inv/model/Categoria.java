@@ -1,5 +1,6 @@
 package com.tailoy.inv.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Set;
@@ -11,6 +12,7 @@ public class Categoria {
     private int id;
     private String nombre;
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<Subcategoria> subcategorias;
 
     public Categoria() {
