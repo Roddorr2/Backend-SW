@@ -2,11 +2,24 @@ package com.tailoy.inv.dto;
 
 import java.time.LocalDateTime;
 
+import com.tailoy.inv.model.OrdenCompra;
+
 public class OrdenCompraDTO {
     private int id;
     private ProveedorDTO proveedor;
     private LocalDateTime fecha;
     private int estadoOperacion;
+    
+    public OrdenCompraDTO() {
+    	
+    }
+    
+    public OrdenCompraDTO(OrdenCompra orden) {
+        this.id = orden.getId();
+        this.proveedor = new ProveedorDTO(orden.getProveedor());
+        this.fecha = orden.getFecha();
+        this.estadoOperacion = orden.getEstadoOperacion();
+    }
 
     public int getId() {
         return id;

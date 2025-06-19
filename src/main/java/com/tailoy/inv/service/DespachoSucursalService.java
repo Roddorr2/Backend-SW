@@ -42,7 +42,7 @@ public class DespachoSucursalService {
         dto.setId(ds.getId());
         dto.setFecha(ds.getFecha());
         dto.setEstadoOperacion(ds.getEstadoOperacion());
-        // dto.setSucursal(new SucursalDTO(ds.getSucursal()));
+        dto.setSucursal(new SucursalDTO(ds.getSucursal()));
 
         return dto;
     }

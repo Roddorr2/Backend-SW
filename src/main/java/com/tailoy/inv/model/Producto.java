@@ -16,6 +16,7 @@ public class Producto {
     private int stock;
     private double precioUnitario;
     private String unidadMedida;
+    private boolean estado;
     @ManyToOne
     @JoinColumn(name = "subcategoria_id", referencedColumnName = "id")
     private Subcategoria subcategoria;
@@ -30,7 +31,7 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(int id, int codigo, String nombre, String marca, String descripcion, int stock, double precioUnitario, String unidadMedida, Subcategoria subcategoria, Set<OrdenCompraDetalle> ordenCompraDetalles, Set<DespachoSucursalDetalle> despachoSucursalDetalles, Set<MovimientoInventario> movimientoInventarios) {
+    public Producto(int id, int codigo, String nombre, String marca, String descripcion, int stock, double precioUnitario, String unidadMedida, boolean estado, Subcategoria subcategoria, Set<OrdenCompraDetalle> ordenCompraDetalles, Set<DespachoSucursalDetalle> despachoSucursalDetalles, Set<MovimientoInventario> movimientoInventarios) {
         this.id = id;
         this.codigo = codigo;
         this.nombre = nombre;
@@ -43,6 +44,7 @@ public class Producto {
         this.ordenCompraDetalles = ordenCompraDetalles;
         this.despachoSucursalDetalles = despachoSucursalDetalles;
         this.movimientoInventarios = movimientoInventarios;
+        this.estado = estado;
     }
 
     public int getId() {
@@ -105,7 +107,15 @@ public class Producto {
         return unidadMedida;
     }
 
-    public void setUnidadMedida(String unidadMedida) {
+    public boolean isEstado() {
+		return estado;
+	}
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+
+	public void setUnidadMedida(String unidadMedida) {
         this.unidadMedida = unidadMedida;
     }
 

@@ -1,8 +1,19 @@
 package com.tailoy.inv.dto;
 
+import com.tailoy.inv.model.Categoria;
+
 public class CategoriaDTO {
     private int id;
     private String nombre;
+    
+    public CategoriaDTO() {
+    	
+    }
+    
+    public CategoriaDTO(Categoria categoria) {
+    	this.id = categoria.getId();
+    	this.nombre = categoria.getNombre();
+    }
 
     public int getId() {
         return id;

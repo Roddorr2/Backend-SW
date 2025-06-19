@@ -1,6 +1,7 @@
 package com.tailoy.inv.service;
 
 import com.tailoy.inv.dto.OrdenCompraDTO;
+import com.tailoy.inv.dto.ProveedorDTO;
 import com.tailoy.inv.model.OrdenCompra;
 import com.tailoy.inv.repository.OrdenCompraRepository;
 import org.springframework.stereotype.Service;
@@ -41,8 +42,8 @@ public class OrdenCompraService {
         dto.setId(oc.getId());
         dto.setFecha(oc.getFecha());
         dto.setEstadoOperacion(oc.getEstadoOperacion());
-        dto.setProveedor(oc.getProveedor());
-
+        dto.setProveedor(new ProveedorDTO(oc.getProveedor()));
+        
         return dto;
     }
 }

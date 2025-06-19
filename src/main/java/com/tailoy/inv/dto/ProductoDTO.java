@@ -1,5 +1,7 @@
 package com.tailoy.inv.dto;
 
+import com.tailoy.inv.model.Producto;
+
 public class ProductoDTO {
     private int id;
     private int codigo;
@@ -9,7 +11,25 @@ public class ProductoDTO {
     private int stock;
     private double precioUnitario;
     private String unidadMedida;
+    private boolean estado;
     private SubcategoriaDTO subcategoria;
+    
+    public ProductoDTO() {
+    	
+    }
+    
+    public ProductoDTO(Producto producto) {
+        this.id = producto.getId();
+        this.codigo = producto.getCodigo();
+        this.nombre = producto.getNombre();
+        this.marca = producto.getMarca();
+        this.descripcion = producto.getDescripcion();
+        this.subcategoria = new SubcategoriaDTO(producto.getSubcategoria());
+        this.stock = producto.getStock();
+        this.precioUnitario = producto.getPrecioUnitario();
+        this.unidadMedida = producto.getUnidadMedida();
+        this.estado = producto.isEstado();
+    }
 
     public int getId() {
         return id;
@@ -75,7 +95,15 @@ public class ProductoDTO {
         this.unidadMedida = unidadMedida;
     }
 
-    public SubcategoriaDTO getSubcategoria() {
+    public boolean isEstado() {
+		return estado;
+	}
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+
+	public SubcategoriaDTO getSubcategoria() {
         return subcategoria;
     }
 

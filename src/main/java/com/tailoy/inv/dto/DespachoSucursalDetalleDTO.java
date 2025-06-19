@@ -1,5 +1,7 @@
 package com.tailoy.inv.dto;
 
+import com.tailoy.inv.model.DespachoSucursalDetalle;
+
 public class DespachoSucursalDetalleDTO {
     private int id;
     private int cantidad;
@@ -7,6 +9,19 @@ public class DespachoSucursalDetalleDTO {
     private String observaciones;
     private DespachoSucursalDTO despachoSucursal;
     private ProductoDTO producto;
+    
+    public DespachoSucursalDetalleDTO() {
+    	
+    }
+    
+    public DespachoSucursalDetalleDTO(DespachoSucursalDetalle despachoDetalle) {
+        this.id = despachoDetalle.getId();
+        this.producto = new ProductoDTO(despachoDetalle.getProducto());
+        this.despachoSucursal = new DespachoSucursalDTO(despachoDetalle.getDespachoSucursal());
+        this.cantidad = despachoDetalle.getCantidad();
+        this.precioUnitario = despachoDetalle.getPrecioUnitario();
+        this.observaciones = despachoDetalle.getObservaciones();
+    }
 
     public int getId() {
         return id;

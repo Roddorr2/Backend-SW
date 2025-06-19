@@ -1,11 +1,21 @@
 package com.tailoy.inv.dto;
 
+import com.tailoy.inv.model.Proveedor;
+
 public class ProveedorDTO {
     private int id;
     private String nombre;
     private String ruc;
     private String telefono;
     private String direccion;
+    
+    public ProveedorDTO(Proveedor proveedor) {
+    	this.id = proveedor.getId();
+    	this.nombre = proveedor.getNombre();
+    	this.ruc = proveedor.getRuc();
+    	this.telefono = proveedor.getTelefono();
+    	this.direccion = proveedor.getDireccion();
+    }
 
     public int getId() {
         return id;
@@ -28,7 +38,7 @@ public class ProveedorDTO {
     }
 
     public void setRuc(String ruc) {
-        this.ruc = ruc;
+        this.ruc = ruc;;
     }
 
     public String getTelefono() {

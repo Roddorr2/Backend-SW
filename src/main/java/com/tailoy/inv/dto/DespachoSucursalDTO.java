@@ -2,11 +2,24 @@ package com.tailoy.inv.dto;
 
 import java.time.LocalDateTime;
 
+import com.tailoy.inv.model.DespachoSucursal;
+
 public class DespachoSucursalDTO {
     private int id;
     private int estadoOperacion;
     private LocalDateTime fecha;
     private SucursalDTO sucursal;
+    
+    public DespachoSucursalDTO() {
+    	
+    }
+    
+    public DespachoSucursalDTO(DespachoSucursal despachoSucursal) {
+    	this.id = despachoSucursal.getId();
+    	this.estadoOperacion = despachoSucursal.getEstadoOperacion();
+    	this.fecha = despachoSucursal.getFecha();
+    	this.sucursal = new SucursalDTO(despachoSucursal.getSucursal());
+    }
 
     public int getId() {
         return id;
