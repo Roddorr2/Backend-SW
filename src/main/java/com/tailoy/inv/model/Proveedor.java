@@ -1,6 +1,7 @@
 package com.tailoy.inv.model;
 
 import jakarta.persistence.*;
+import java.util.Set;
 @Entity
 public class Proveedor {
     @Id
