@@ -12,16 +12,17 @@ public class MovimientoAlmacen {
     private int tipoAlmacen;
     @OneToMany(mappedBy = "movimientoAlmacen", cascade = CascadeType.ALL)
     private Set<MovimientoAlmacenDetalle> movimientoAlmacenDetalles;
+    private int cantidad;
 
     public MovimientoAlmacen() {
 
     }
 
-
-    public MovimientoAlmacen(int id, int tipoAlmacen, Set<MovimientoAlmacenDetalle> movimientoAlmacenDetalles) {
+    public MovimientoAlmacen(int id, int tipoAlmacen, Set<MovimientoAlmacenDetalle> movimientoAlmacenDetalles, int cantidad) {
         this.id = id;
         this.tipoAlmacen = tipoAlmacen;
         this.movimientoAlmacenDetalles = movimientoAlmacenDetalles;
+        this.cantidad = cantidad;
     }
 
     public int getId() {
@@ -47,4 +48,16 @@ public class MovimientoAlmacen {
     public void setMovimientoAlmacenDetalles(Set<MovimientoAlmacenDetalle> movimientoAlmacenDetalles) {
         this.movimientoAlmacenDetalles = movimientoAlmacenDetalles;
     }
+
+
+	public int getCantidad() {
+		return cantidad;
+	}
+
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+    
+    
 }
