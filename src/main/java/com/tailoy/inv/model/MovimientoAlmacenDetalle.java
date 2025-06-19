@@ -7,7 +7,6 @@ public class MovimientoAlmacenDetalle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int cantidad;
     @ManyToOne
     @JoinColumn(name = "movimiento_almacen_id", nullable = false)
     private MovimientoAlmacen movimientoAlmacen;
@@ -18,9 +17,8 @@ public class MovimientoAlmacenDetalle {
     public MovimientoAlmacenDetalle() {
     }
 
-    public MovimientoAlmacenDetalle(int id, int cantidad, MovimientoAlmacen movimientoAlmacen, Producto producto) {
+    public MovimientoAlmacenDetalle(int id, MovimientoAlmacen movimientoAlmacen, Producto producto) {
         this.id = id;
-        this.cantidad = cantidad;
         this.movimientoAlmacen = movimientoAlmacen;
         this.producto = producto;
     }
@@ -31,14 +29,6 @@ public class MovimientoAlmacenDetalle {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
     }
 
     public MovimientoAlmacen getMovimientoAlmacen() {
