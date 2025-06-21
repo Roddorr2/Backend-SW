@@ -1,6 +1,5 @@
 package com.tailoy.inv.controller;
 
-import com.tailoy.inv.dto.HistorialUsuarioDTO;
 import com.tailoy.inv.dto.ProdSubCatDTO;
 import com.tailoy.inv.dto.ProductoDTO;
 import com.tailoy.inv.model.Producto;

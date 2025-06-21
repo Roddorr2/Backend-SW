@@ -1,9 +1,7 @@
 package com.tailoy.inv.service;
 
 import com.tailoy.inv.dto.MovimientoAlmacenDTO;
-import com.tailoy.inv.dto.MovimientoInventarioDTO;
 import com.tailoy.inv.model.MovimientoAlmacen;
-import com.tailoy.inv.model.MovimientoInventario;
 import com.tailoy.inv.repository.MovimientoAlmacenRepository;
 import org.springframework.stereotype.Service;
 
