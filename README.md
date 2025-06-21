@@ -4,7 +4,6 @@ Inventario is a Spring Boot application for managing inventory.
 
 ## Features
 
-- User authentication using JWT
 - Inventory management (CRUD operations)
 - RESTful APIs
 
@@ -13,7 +12,6 @@ Inventario is a Spring Boot application for managing inventory.
 - Java
 - Spring Boot
 - Spring Data JPA
-- Spring Security
 - MySQL
 - Maven
 
@@ -48,12 +46,3 @@ Inventario is a Spring Boot application for managing inventory.
 
 The following are the main API endpoints provided by the application:
 
-### Authentication
-
-- `POST /auth/login`: Authenticates a user and returns a JWT token.
-  - Request body: `{ "id": "userId", "contrasena": "password" }`
-  - Response: `{ "token": "jwtToken" }`
-- `POST /auth/register`: Registers a new user.
-  - Request body: `{ "id": "userId", "nombre": "name", "correo": "email", "contrasena": "password", ... }` (other user fields)
-
-*Note: Other CRUD operations for inventory management might be handled through direct database interactions or internal service calls, as no other controller endpoints are exposed.*
