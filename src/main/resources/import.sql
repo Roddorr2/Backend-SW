@@ -6,11 +6,11 @@ insert into cargo (nombre) values ('Gerente de Compras');
 insert into cargo (nombre) values ('Coordinador de Producción');
 
 -- Inserciones en usuario
-insert into usuario (nombre, correo, contrasena, estado, cargo_id) values ('Carlos Pérez', 'carlos@tailoy.com', '123456', 1,1);
-insert into usuario (nombre, correo, contrasena, estado, cargo_id) values ('Lucía Gómez', 'lucia@tailoy.com', 'abcdef', 1,2);
-insert into usuario (nombre, correo, contrasena, estado, cargo_id) values ('Jorge Rivas', 'jorge@tailoy.com', 'clave123', 1,3);
-insert into usuario (nombre, correo, contrasena, estado, cargo_id) values ('Ana Torres', 'ana@tailoy.com', 'qwerty', 1, 4);
-insert into usuario (nombre, correo, contrasena, estado, cargo_id) values ('Luis Mendoza', 'luis@tailoy.com', 'zxcvbn', 1, 5);
+insert into usuario (nombre, correo, contrasena, estado, cargo_id) values ('Carlos Pérez', 'carlos@tailoy.com.pe', '123456', 1,1);
+insert into usuario (nombre, correo, contrasena, estado, cargo_id) values ('Lucía Gómez', 'lucia@tailoy.com.pe', 'abcdef', 1,2);
+insert into usuario (nombre, correo, contrasena, estado, cargo_id) values ('Jorge Rivas', 'jorge@tailoy.com.pe', 'clave123', 1,3);
+insert into usuario (nombre, correo, contrasena, estado, cargo_id) values ('Ana Torres', 'ana@tailoy.com.pe', 'qwerty', 1, 4);
+insert into usuario (nombre, correo, contrasena, estado, cargo_id) values ('Luis Mendoza', 'luis@tailoy.com.pe', 'zxcvbn', 1, 5);
 
 -- Inserciones en categoria
 insert into categoria (nombre) values ('Útiles escolares');
