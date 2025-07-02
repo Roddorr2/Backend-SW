@@ -3,7 +3,6 @@ package com.tailoy.inv.service;
 import com.tailoy.inv.dto.MovimientoAlmacenDTO;
 import com.tailoy.inv.dto.MovimientoAlmacenDetalleDTO;
 import com.tailoy.inv.dto.ProductoDTO;
-import com.tailoy.inv.model.MovimientoAlmacen;
 import com.tailoy.inv.model.MovimientoAlmacenDetalle;
 import com.tailoy.inv.repository.MovimientoAlmacenDetalleRepository;
 import org.springframework.stereotype.Service;
