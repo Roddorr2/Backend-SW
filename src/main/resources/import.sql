@@ -6,11 +6,11 @@ insert into cargo (nombre) values ('Gerente de Compras');
 insert into cargo (nombre) values ('Coordinador de Producción');
 
 -- Inserciones en usuario (contraseña: 123456)
-insert into usuario (nombre, correo, contrasena, estado, cargo_id) values ('Carlos Pérez', 'carlos@tailoy.com.pe', '$2a$12$HIe.m.4/Dz0oQMZ5Tm.kjOk.4z759r6Pnzx.IzP38hcl6KcTrUfZO', 1,1);
-insert into usuario (nombre, correo, contrasena, estado, cargo_id) values ('Lucía Gómez', 'lucia@tailoy.com.pe', '$2a$12$HIe.m.4/Dz0oQMZ5Tm.kjOk.4z759r6Pnzx.IzP38hcl6KcTrUfZO', 1,2);
-insert into usuario (nombre, correo, contrasena, estado, cargo_id) values ('Jorge Rivas', 'jorge@tailoy.com.pe', '$2a$12$HIe.m.4/Dz0oQMZ5Tm.kjOk.4z759r6Pnzx.IzP38hcl6KcTrUfZO', 1,3);
-insert into usuario (nombre, correo, contrasena, estado, cargo_id) values ('Ana Torres', 'ana@tailoy.com.pe', '$2a$12$HIe.m.4/Dz0oQMZ5Tm.kjOk.4z759r6Pnzx.IzP38hcl6KcTrUfZO', 1, 4);
-insert into usuario (nombre, correo, contrasena, estado, cargo_id) values ('Luis Mendoza', 'luis@tailoy.com.pe', '$2a$12$HIe.m.4/Dz0oQMZ5Tm.kjOk.4z759r6Pnzx.IzP38hcl6KcTrUfZO', 1, 5);
+insert into usuario (nombre, correo, contrasena, cargo_id) values ('Carlos Pérez', 'carlos@tailoy.com.pe', '$2a$12$HIe.m.4/Dz0oQMZ5Tm.kjOk.4z759r6Pnzx.IzP38hcl6KcTrUfZO', 1);
+insert into usuario (nombre, correo, contrasena, cargo_id) values ('Lucía Gómez', 'lucia@tailoy.com.pe', '$2a$12$HIe.m.4/Dz0oQMZ5Tm.kjOk.4z759r6Pnzx.IzP38hcl6KcTrUfZO', 2);
+insert into usuario (nombre, correo, contrasena, cargo_id) values ('Jorge Rivas', 'jorge@tailoy.com.pe', '$2a$12$HIe.m.4/Dz0oQMZ5Tm.kjOk.4z759r6Pnzx.IzP38hcl6KcTrUfZO', 3);
+insert into usuario (nombre, correo, contrasena, cargo_id) values ('Ana Torres', 'ana@tailoy.com.pe', '$2a$12$HIe.m.4/Dz0oQMZ5Tm.kjOk.4z759r6Pnzx.IzP38hcl6KcTrUfZO', 4);
+insert into usuario (nombre, correo, contrasena, cargo_id) values ('Luis Mendoza', 'luis@tailoy.com.pe', '$2a$12$HIe.m.4/Dz0oQMZ5Tm.kjOk.4z759r6Pnzx.IzP38hcl6KcTrUfZO', 5);
 
 -- Inserciones en categoria
 insert into categoria (nombre) values ('Útiles escolares');
@@ -27,18 +27,18 @@ insert into subcategoria (nombre, categoria_id) values ('Laptops', 2);
 insert into subcategoria (nombre, categoria_id) values ('Rompecabezas', 3);
 
 -- Inserciones en producto
-insert into producto (codigo, nombre, marca, descripcion, subcategoria_id, stock, precio_unitario, unidad_medida, estado) values (1001, 'Lapicero Azul', 'Faber-Castell', 'Lapicero tinta azul', 1, 100, 1.50, 'Unidad', 1);
-insert into producto (codigo, nombre, marca, descripcion, subcategoria_id, stock, precio_unitario, unidad_medida, estado) values (1002, 'Cuaderno rayado', 'Standford', 'Cuaderno A4 rayado', 2, 200, 3.20, 'Unidad', 1);
-insert into producto (codigo, nombre, marca, descripcion, subcategoria_id, stock, precio_unitario, unidad_medida, estado) values (2001, 'Tablet Android', 'Lenovo', 'Tablet de 10 pulgadas', 3, 50, 350.00, 'Unidad', 1);
-insert into producto (codigo, nombre, marca, descripcion, subcategoria_id, stock, precio_unitario, unidad_medida, estado) values (2002, 'Laptop 15"', 'HP', 'Laptop 15 pulgadas, 8GB RAM', 4, 30, 2400.00, 'Unidad', 1);
-insert into producto (codigo, nombre, marca, descripcion, subcategoria_id, stock, precio_unitario, unidad_medida, estado) values (3001, 'Puzzle 500 piezas', 'Ravensburger', 'Rompecabezas infantil', 5, 80, 25.00, 'Caja', 1);
+insert into producto (codigo, nombre, marca, descripcion, subcategoria_id, stock, precio_unitario, unidad_medida) values (1001, 'Lapicero Azul', 'Faber-Castell', 'Lapicero tinta azul', 1, 100, 1.50, 'Unidad');
+insert into producto (codigo, nombre, marca, descripcion, subcategoria_id, stock, precio_unitario, unidad_medida) values (1002, 'Cuaderno rayado', 'Standford', 'Cuaderno A4 rayado', 2, 200, 3.20, 'Unidad');
+insert into producto (codigo, nombre, marca, descripcion, subcategoria_id, stock, precio_unitario, unidad_medida) values (2001, 'Tablet Android', 'Lenovo', 'Tablet de 10 pulgadas', 3, 50, 350.00, 'Unidad');
+insert into producto (codigo, nombre, marca, descripcion, subcategoria_id, stock, precio_unitario, unidad_medida) values (2002, 'Laptop 15"', 'HP', 'Laptop 15 pulgadas, 8GB RAM', 4, 30, 2400.00, 'Unidad');
+insert into producto (codigo, nombre, marca, descripcion, subcategoria_id, stock, precio_unitario, unidad_medida) values (3001, 'Puzzle 500 piezas', 'Ravensburger', 'Rompecabezas infantil', 5, 80, 25.00, 'Caja');
 
 -- Inserciones en proveedor
-insert into proveedor (nombre, ruc, telefono, direccion, estado) values ('Distribuidora Escolar SAC', '20123456789', '012345678', 'Av. Perú 1234', 1);
-insert into proveedor (nombre, ruc, telefono, direccion, estado) values ('Tech Import S.A.', '20567891234', '012345679', 'Jr. Tecnología 456', 1);
-insert into proveedor (nombre, ruc, telefono, direccion, estado) values ('Juguetes y Más SAC', '20876543210', '012345680', 'Av. Juguetes 789', 1);
-insert into proveedor (nombre, ruc, telefono, direccion, estado) values ('Oficinas Perú SRL', '20987654321', '012345681', 'Av. Arequipa 321', 1);
-insert into proveedor (nombre, ruc, telefono, direccion, estado) values ('Papelería Lima', '20765432109', '012345682', 'Av. La Marina 654', 1);
+insert into proveedor (nombre, ruc, telefono, direccion) values ('Distribuidora Escolar SAC', '20123456789', '012345678', 'Av. Perú 1234',);
+insert into proveedor (nombre, ruc, telefono, direccion) values ('Tech Import S.A.', '20567891234', '012345679', 'Jr. Tecnología 456',);
+insert into proveedor (nombre, ruc, telefono, direccion) values ('Juguetes y Más SAC', '20876543210', '012345680', 'Av. Juguetes 789',);
+insert into proveedor (nombre, ruc, telefono, direccion) values ('Oficinas Perú SRL', '20987654321', '012345681', 'Av. Arequipa 321',);
+insert into proveedor (nombre, ruc, telefono, direccion) values ('Papelería Lima', '20765432109', '012345682', 'Av. La Marina 654',);
 
 -- Inserciones en orden_compra
 insert into orden_compra (proveedor_id, fecha, estado_operacion) values (1, '2025-06-01 09:00:00', 1);

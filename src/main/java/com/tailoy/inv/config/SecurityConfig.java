@@ -37,7 +37,7 @@ public class SecurityConfig {
         return username -> {
             Usuario usuario = usuarioRepository.findByCorreo(username)
                     .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
-            if (usuario == null || !usuario.isEstado()) {
+            if (usuario == null) {
                 throw new UsernameNotFoundException("Usuario no encontrado");
             }
 

@@ -13,7 +13,6 @@ public class Usuario {
     private String nombre;
     private String correo;
     private String contrasena;
-    public boolean estado;
     @ManyToOne
     @JoinColumn(name = "cargo_id", referencedColumnName = "id")
     private Cargo cargo;
@@ -60,14 +59,6 @@ public class Usuario {
 
     public String getContrasena() {
         return contrasena;
-    }
-
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
     }
 
     public void setContrasena(String contrasena) {

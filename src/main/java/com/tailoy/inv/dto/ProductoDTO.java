@@ -11,7 +11,6 @@ public class ProductoDTO {
     private int stock;
     private double precioUnitario;
     private String unidadMedida;
-    private boolean estado;
     private SubcategoriaDTO subcategoria;
 
     public ProductoDTO() {
@@ -28,7 +27,6 @@ public class ProductoDTO {
         this.stock = producto.getStock();
         this.precioUnitario = producto.getPrecioUnitario();
         this.unidadMedida = producto.getUnidadMedida();
-        this.estado = producto.isEstado();
     }
 
     public int getId() {
@@ -94,14 +92,6 @@ public class ProductoDTO {
     public void setUnidadMedida(String unidadMedida) {
         this.unidadMedida = unidadMedida;
     }
-
-    public boolean isEstado() {
-		return estado;
-	}
-
-	public void setEstado(boolean estado) {
-		this.estado = estado;
-	}
 
 	public SubcategoriaDTO getSubcategoria() {
         return subcategoria;
