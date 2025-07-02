@@ -19,10 +19,6 @@ target/
 *.iml
 *.ipr
 
-### Para no chocar cambios
-src/main/resources/import.sql
-src/main/resources/application.properties
-
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
