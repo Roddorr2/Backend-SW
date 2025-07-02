@@ -11,44 +11,45 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@RequestMapping("api/productos")
 public class ProductoController {
     private final ProductoService productoService;
     public ProductoController(ProductoService productoService) {
         this.productoService = productoService;
     }
 
-    @GetMapping("/productos")
+    @GetMapping
     public List<ProductoDTO> getAllProductos() {
         return productoService.getAllProductos();
     }
 
-    @GetMapping("/productos/{id}")
+    @GetMapping("/{id}")
     public ProductoDTO getProductosById(@PathVariable int id) {
         return productoService.getProductosById(id);
     }
 
-    @PostMapping("/productos")
+    @PostMapping
     public Producto createProducto(@RequestBody Producto producto) {
         return productoService.saveProducto(producto);
     }
 
-    @PutMapping("/productos/{id}")
+    @PutMapping("/{id}")
     public Producto updateProducto(@PathVariable int id, @RequestBody Producto producto) {
         producto.setId(id);
         return productoService.saveProducto(producto);
     }
 
-    @DeleteMapping("/productos/{id}")
+    @DeleteMapping("/{id}")
     public void deleteProducto(@PathVariable int id) {
         productoService.deleteProducto(id);
     }
 
-    @GetMapping("/productos/jpql")
+    @GetMapping("/jpql")
     public List<ProdSubCatDTO> getProductosConSubCatJPQL() {
         return productoService.getProductosConSubCatJPQL();
     }
 
-    @GetMapping("/productos/native")
+    @GetMapping("/native")
     public List<Map<String, Object>> getProductosConSubCatSQL() {
         return productoService.getProductosConSubCatSQL();
     }

@@ -19,6 +19,7 @@ import com.tailoy.inv.model.Usuario;
 import com.tailoy.inv.service.UsuarioService;
 
 @RestController
+@RequestMapping("api/usuarios")
 public class UsuarioController {
 
     private final UsuarioService usuarioService;
@@ -27,28 +28,28 @@ public class UsuarioController {
         this.usuarioService = usuarioService;
     }
 
-    @GetMapping("/usuarios")
+    @GetMapping
     public List<UsuarioDTO> getAllUsuarios() {
         return usuarioService.getAllUsuarios();
     }
 
-    @GetMapping("/usuarios/{id}")
+    @GetMapping("/{id}")
     public UsuarioDTO getUsuariosById(@PathVariable int id) {
         return usuarioService.getUsuariosById(id);
     }
 
-    @PostMapping("/usuarios")
+    @PostMapping
     public Usuario createUsuario(@RequestBody Usuario usuario) {
         return usuarioService.saveUsuario(usuario);
     }
 
-    @PutMapping("/usuarios/{id}")
+    @PutMapping("/{id}")
     public Usuario updateUsuario(@PathVariable int id, @RequestBody Usuario usuario) {
         usuario.setId(id);
         return usuarioService.saveUsuario(usuario);
     }
 
-    @DeleteMapping("/usuarios/{id}")
+    @DeleteMapping("/{id}")
     public void deleteUsuario(@PathVariable int id) {
         usuarioService.deleteUsuario(id);
     }

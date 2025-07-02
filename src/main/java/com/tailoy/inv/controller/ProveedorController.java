@@ -8,34 +8,35 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("api/proveedores")
 public class ProveedorController {
     private final ProveedorService proveedorService;
     public ProveedorController(ProveedorService proveedorService) {
         this.proveedorService = proveedorService;
     }
 
-    @GetMapping("/proveedores")
+    @GetMapping
     public List<ProveedorDTO> getAllProveedores() {
         return proveedorService.getAllProveedores();
     }
 
-    @GetMapping("/proveedores/{id}")
+    @GetMapping("/{id}")
     public ProveedorDTO getProveedoresById(@PathVariable int id) {
         return proveedorService.getProveedoresById(id);
     }
 
-    @PostMapping("/proveedores")
+    @PostMapping
     public Proveedor createproveedor(@RequestBody Proveedor proveedor) {
         return proveedorService.saveProveedor(proveedor);
     }
 
-    @PutMapping("/proveedores/{id}")
+    @PutMapping("/{id}")
     public Proveedor updateproveedor(@PathVariable int id, @RequestBody Proveedor proveedor) {
         proveedor.setId(id);
         return proveedorService.saveProveedor(proveedor);
     }
 
-    @DeleteMapping("/proveedores/{id}")
+    @DeleteMapping("/{id}")
     public void deleteProveedor(@PathVariable int id) {
         proveedorService.deleteProveedor(id);
     }

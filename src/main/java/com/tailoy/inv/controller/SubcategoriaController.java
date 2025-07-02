@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("api/subcategorias")
 public class SubcategoriaController {
     private final SubcategoriaService subcategoriaService;
 
@@ -15,28 +16,28 @@ public class SubcategoriaController {
         this.subcategoriaService = subcategoriaService;
     }
 
-    @GetMapping("/subcategorias")
+    @GetMapping
     public List<SubcategoriaDTO> getAllSubcategorias() {
         return subcategoriaService.getAllSubcategorias();
     }
 
-    @GetMapping("/subcategorias/{id}")
+    @GetMapping("/{id}")
     public SubcategoriaDTO getSubcategoriaById(@PathVariable int id) {
         return subcategoriaService.getSubcategoriasById(id);
     }
 
-    @PostMapping("/subcategorias")
+    @PostMapping
     public Subcategoria createSubcategoria(@RequestBody Subcategoria subcategoria) {
         return subcategoriaService.saveSubcategoria(subcategoria);
     }
 
-    @PutMapping("/subcategorias/{id}")
+    @PutMapping("/{id}")
     public Subcategoria updateSubcategoria(@PathVariable int id, @RequestBody Subcategoria subcategoria) {
         subcategoria.setId(id);
         return subcategoriaService.saveSubcategoria(subcategoria);
     }
 
-    @DeleteMapping("/subcategorias/{id}")
+    @DeleteMapping("/{id}")
     public void deleteSubcategoria(@PathVariable int id) {
         subcategoriaService.deleteSubcategoria(id);
     }

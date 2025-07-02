@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("api/categorias")
 public class CategoriaController {
     private final CategoriaService categoriaService;
 
@@ -15,28 +16,28 @@ public class CategoriaController {
         this.categoriaService = categoriaService;
     }
 
-    @GetMapping("/categorias")
+    @GetMapping
     public List<CategoriaDTO> getAllCategorias() {
         return categoriaService.getAllCategorias();
     }
 
-    @GetMapping("/categorias/{id}")
+    @GetMapping("/{id}")
     public CategoriaDTO getCategoriaById(@PathVariable int id) {
         return categoriaService.getCategoriasById(id);
     }
 
-    @PostMapping("/categorias")
+    @PostMapping
     public Categoria createCategoria(@RequestBody Categoria categoria) {
         return categoriaService.saveCategoria(categoria);
     }
 
-    @PutMapping("/categorias/{id}")
+    @PutMapping("/{id}")
     public Categoria updateCategoria(@PathVariable int id, @RequestBody Categoria categoria) {
         categoria.setId(id);
         return categoriaService.saveCategoria(categoria);
     }
 
-    @DeleteMapping("/categorias/{id}")
+    @DeleteMapping("/{id}")
     public void deleteCategoria(@PathVariable int id) {
         categoriaService.deleteCategoria(id);
     }
