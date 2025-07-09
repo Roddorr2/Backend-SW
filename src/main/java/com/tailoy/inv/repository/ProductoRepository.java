@@ -1,14 +1,19 @@
 package com.tailoy.inv.repository;
 
 import com.tailoy.inv.dto.ProdSubCatDTO;
+import com.tailoy.inv.dto.ProductoDTO;
 import com.tailoy.inv.model.Producto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
 
+@Repository
 public interface ProductoRepository extends JpaRepository<Producto, Integer> {
+    List<ProductoDTO> findByNombre(String nombre);
+    boolean existsByCodigo(int codigo);
     @Query("""
     SELECT new com.tailoy.inv.dto.ProdSubCatDTO(
         p.codigo,

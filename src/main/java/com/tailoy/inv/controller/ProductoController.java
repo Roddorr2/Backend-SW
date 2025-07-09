@@ -38,6 +38,17 @@ public class ProductoController {
         return productoService.saveProducto(producto);
     }
 
+    @GetMapping("/existe")
+    public boolean existeCodigoProducto(@RequestParam int codigo) {
+        boolean existe = productoService.existeCodigoProducto(codigo);
+        return existe;
+    }
+
+    @GetMapping("/buscar")
+    public List<ProductoDTO> buscarPorNombre(@RequestParam String nombre) {
+        return productoService.buscarPorNombre(nombre);
+    }
+
     @DeleteMapping("/{id}")
     public void deleteProducto(@PathVariable int id) {
         productoService.deleteProducto(id);

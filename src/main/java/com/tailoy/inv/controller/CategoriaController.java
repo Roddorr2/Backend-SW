@@ -37,6 +37,11 @@ public class CategoriaController {
         return categoriaService.saveCategoria(categoria);
     }
 
+    @GetMapping("/buscar")
+    public List<CategoriaDTO> buscarPorNombre(@RequestParam String nombre) {
+        return categoriaService.buscarPorNombre(nombre);
+    }
+
     @DeleteMapping("/{id}")
     public void deleteCategoria(@PathVariable int id) {
         categoriaService.deleteCategoria(id);

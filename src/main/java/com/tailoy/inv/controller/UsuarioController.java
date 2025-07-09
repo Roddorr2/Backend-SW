@@ -29,14 +29,13 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public Usuario createUsuario(@RequestBody Usuario usuario) {
-        return usuarioService.saveUsuario(usuario);
+    public Usuario createUsuario(@RequestBody UsuarioDTO dto) {
+        return usuarioService.insertarUsuario(dto);
     }
 
     @PutMapping("/{id}")
-    public Usuario updateUsuario(@PathVariable int id, @RequestBody Usuario usuario) {
-        usuario.setId(id);
-        return usuarioService.saveUsuario(usuario);
+    public Usuario updateUsuario(@PathVariable int id, @RequestBody UsuarioDTO dto) {
+        return usuarioService.actualizarUsuario(dto, id);
     }
 
     @DeleteMapping("/{id}")

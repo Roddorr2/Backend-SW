@@ -34,11 +34,11 @@ insert into producto (codigo, nombre, marca, descripcion, subcategoria_id, stock
 insert into producto (codigo, nombre, marca, descripcion, subcategoria_id, stock, precio_unitario, unidad_medida) values (3001, 'Puzzle 500 piezas', 'Ravensburger', 'Rompecabezas infantil', 5, 80, 25.00, 'Caja');
 
 -- Inserciones en proveedor
-insert into proveedor (nombre, ruc, telefono, direccion) values ('Distribuidora Escolar SAC', '20123456789', '012345678', 'Av. Perú 1234',);
-insert into proveedor (nombre, ruc, telefono, direccion) values ('Tech Import S.A.', '20567891234', '012345679', 'Jr. Tecnología 456',);
-insert into proveedor (nombre, ruc, telefono, direccion) values ('Juguetes y Más SAC', '20876543210', '012345680', 'Av. Juguetes 789',);
-insert into proveedor (nombre, ruc, telefono, direccion) values ('Oficinas Perú SRL', '20987654321', '012345681', 'Av. Arequipa 321',);
-insert into proveedor (nombre, ruc, telefono, direccion) values ('Papelería Lima', '20765432109', '012345682', 'Av. La Marina 654',);
+insert into proveedor (nombre, ruc, telefono, direccion) values ('Distribuidora Escolar SAC', '20123456789', '012345678', 'Av. Perú 1234');
+insert into proveedor (nombre, ruc, telefono, direccion) values ('Tech Import S.A.', '20567891234', '012345679', 'Jr. Tecnología 456');
+insert into proveedor (nombre, ruc, telefono, direccion) values ('Juguetes y Más SAC', '20876543210', '012345680', 'Av. Juguetes 789');
+insert into proveedor (nombre, ruc, telefono, direccion) values ('Oficinas Perú SRL', '20987654321', '012345681', 'Av. Arequipa 321');
+insert into proveedor (nombre, ruc, telefono, direccion) values ('Papelería Lima', '20765432109', '012345682', 'Av. La Marina 654');
 
 -- Inserciones en orden_compra
 insert into orden_compra (proveedor_id, fecha, estado_operacion) values (1, '2025-06-01 09:00:00', 1);
@@ -75,20 +75,6 @@ insert into despacho_sucursal_detalle (despacho_sucursal_id, producto_id, cantid
 insert into despacho_sucursal_detalle (despacho_sucursal_id, producto_id, cantidad, precio_unitario, observaciones) values (4, 4, 2, 2400.00, 'Manejo con cuidado');
 insert into despacho_sucursal_detalle (despacho_sucursal_id, producto_id, cantidad, precio_unitario, observaciones) values (5, 5, 10, 25.00, 'Sin observación');
 
--- Inserciones en movimiento_almacen
-insert into movimiento_almacen (tipo_almacen, cantidad) values (1, 100);
-insert into movimiento_almacen (tipo_almacen, cantidad) values (2, 50);
-insert into movimiento_almacen (tipo_almacen, cantidad) values (1, 70);
-insert into movimiento_almacen (tipo_almacen, cantidad) values (2, 20);
-insert into movimiento_almacen (tipo_almacen, cantidad) values (1, 40);
-
--- Inserciones en movimiento_almacen_producto
-insert into movimiento_almacen_detalle (movimiento_almacen_id, producto_id) values (1, 1);
-insert into movimiento_almacen_detalle (movimiento_almacen_id, producto_id) values (2, 3);
-insert into movimiento_almacen_detalle (movimiento_almacen_id, producto_id) values (3, 2);
-insert into movimiento_almacen_detalle (movimiento_almacen_id, producto_id) values (4, 5);
-insert into movimiento_almacen_detalle (movimiento_almacen_id, producto_id) values (5, 4);
-
 -- Inserciones en historial_accion
 insert into historial_accion (usuario_id, fecha, tipo_accion, descripcion, modulo) values (1, "2023-04-15 10:30:00",1, 'Creación de producto', 1);
 insert into historial_accion (usuario_id, fecha, tipo_accion, descripcion, modulo) values (2, "2024-11-20 23:59:59",2, 'Actualización de stock', 2);
@@ -97,8 +83,8 @@ insert into historial_accion (usuario_id, fecha, tipo_accion, descripcion, modul
 insert into historial_accion (usuario_id, fecha, tipo_accion, descripcion, modulo) values (5, "2023-02-28 08:20:30",2, 'Modificación de categoría', 5);
 
 -- Inserciones en movimiento_inventario
-insert into movimiento_inventario (producto_id, cantidad, nombre, tipo_movimiento, usuario_id) values (1, 50, 'Ingreso por compra', 1, 1);
-insert into movimiento_inventario (producto_id, cantidad, nombre, tipo_movimiento, usuario_id) values (2, 100, 'Ingreso inicial', 1, 2);
-insert into movimiento_inventario (producto_id, cantidad, nombre, tipo_movimiento, usuario_id) values (3, 10, 'Salida por despacho', 2, 3);
-insert into movimiento_inventario (producto_id, cantidad, nombre, tipo_movimiento, usuario_id) values (4, 5, 'Salida por baja', 2, 4);
-insert into movimiento_inventario (producto_id, cantidad, nombre, tipo_movimiento, usuario_id) values (5, 20, 'Ingreso por ajuste', 1, 5);
+insert into movimiento_inventario (producto_id, cantidad, tipo_movimiento, usuario_id) values (1, 50,  1, 1);
+insert into movimiento_inventario (producto_id, cantidad, tipo_movimiento, usuario_id) values (2, 100, 1, 2);
+insert into movimiento_inventario (producto_id, cantidad, tipo_movimiento, usuario_id) values (3, 10, 2, 3);
+insert into movimiento_inventario (producto_id, cantidad, tipo_movimiento, usuario_id) values (4, 5, 2 ,4);
+insert into movimiento_inventario (producto_id, cantidad, tipo_movimiento, usuario_id) values (5, 20,  1, 5);

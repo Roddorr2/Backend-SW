@@ -55,6 +55,14 @@ public class ProductoService {
         return productoRepository.obtenerProductosConSubcatCatNative();
     }
 
+    public boolean existeCodigoProducto(int codigo) {
+        return productoRepository.existsByCodigo(codigo);
+    }
+
+    public List<ProductoDTO> buscarPorNombre(String nombre) {
+        return productoRepository.findByNombre(nombre);
+    }
+
     private ProductoDTO convertirADTO(Producto producto) {
         ProductoDTO dto = new ProductoDTO();
 

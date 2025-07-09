@@ -36,6 +36,10 @@ public class CategoriaService {
         return convertirADTO(categoria);
     }
 
+    public List<CategoriaDTO> buscarPorNombre(String nombre) {
+        return categoriaRepository.findByNombre(nombre);
+    }
+
     public Categoria saveCategoria(Categoria categoria) {
         return categoriaRepository.save(categoria);
     }
